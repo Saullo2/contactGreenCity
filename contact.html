@@ -7,7 +7,7 @@
     <title>Contact GreenCity</title>
     <meta name="description" content="GreenCity restaurant">
     <link href="https://fonts.googleapis.com/css?family=Cookie&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel="stylesheet" href="css/contact.css">
 </head>
 <body>
@@ -26,17 +26,19 @@
                         <div class="input-error-msg" id="nome-error-alert">
                             <p>Insira seu nome completo.</p>
                         </div>
+                        <i class="fa fa-times-circle fa-2x" aria-hidden="true" id="nome-error-icon"></i>
                         <input type="text" placeholder="Nome" name="nome" id="nome" onclick="errorMessages()">
-                        <i class="fas fa-times-circle" style="display:block;"></i>
-
+                       
                         <div class="input-error-msg" id="email-error-alert">
                             <p>Insira um email válido.</p>
                         </div>
+                        <i class="fa fa-times-circle fa-2x" aria-hidden="true" id="email-error-icon"></i>
                         <input type="email" placeholder="Email" name="email" id="email" onclick="errorMessages()"><br>
 
                         <div class="input-error-msg" id="mensagem-error-alert">
                             <p>A mensagem deve conter pelo <br> menos 4 palavras e 20 caracteres.</p>
                         </div>
+                        <i class="fa fa-times-circle fa-2x" aria-hidden="true" id="mensagem-error-icon"></i>
                         <textarea name="mensagem" id="mensagem" cols="30" rows="10" placeholder="Mensagem" onclick="errorMessages()"></textarea><br>
 
                         <button type="submit" class="enviar-btn" id="enviar-btn" disabled>ENVIAR</button>
@@ -49,6 +51,7 @@
             
         </section>
     </main>
+    
     
     <script src="javascript/contact.js"></script>
 </body>

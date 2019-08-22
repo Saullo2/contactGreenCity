@@ -77,6 +77,7 @@ header{
     resize: none;
     font-family: inherit;
 }
+
 .enviar-btn{
     background-color: rgb(113,163,151);
     /* background-color: rgb(155,155,155); */
@@ -91,6 +92,7 @@ header{
     font-size: 22px;
     text-decoration: none;
     display: block;
+    cursor: pointer;
 }
 
 .enviar-btn:hover{
@@ -112,4 +114,12 @@ header{
 }
 .input-error-msg p {
     text-align: left;
+}
+
+.form-container i{
+    color: rgb(216, 90, 75);
+    position: absolute;
+    margin-top: 9px;
+    margin-left: 420px;
+    visibility: hidden;
 }
