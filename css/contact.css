@@ -1,0 +1,115 @@
+body{
+    margin: 0;
+    font-family: 'Open Sans';
+    
+    height: 115vh;
+}
+
+main{
+    display: flex;
+    height: inherit;
+}
+
+.form-section{
+    background-image: url('../assets/04-BG.png');
+    background-repeat: no-repeat;
+    background-size: cover;
+    flex: 1;
+    border-right: 0.7em solid rgb(32,60,64);
+    text-align: center;
+    /* transform: skewX(-8deg); */
+
+}
+
+.coffe-section{
+    background-image: url('../assets/05-IMAGE.png');
+    background-repeat: no-repeat;
+    background-size: cover;
+    flex: 1;
+}
+
+.form-container{
+    width: 60%;
+    margin-left: 20%;
+    /* transform: skewX(8deg); */
+}
+.form-section .success-message{
+    font-weight: bold;
+    font-style: italic;
+    font-size: 16px;
+    color: #FFF;
+    visibility: hidden;
+}
+
+.form-section .p-header{
+    color: #FFF;
+    font-size: 71px;
+    margin-bottom: 0;
+    width: 100%;
+    font-family: 'Cookie', cursive;
+}
+
+header{
+    background-color: rgb(172,208,182);
+    text-align: center;
+    padding: 1em;
+}
+
+/* Inputs */
+
+#nome, #email {
+    height: 2.5em;
+    padding-left: 1.2em;
+    padding-right: 1.2em;
+}
+
+#mensagem, #nome, #email {
+    border-radius: 8px;
+    width: calc(100% - 2.4em);
+    font-weight: 300; /* Light */
+    margin-bottom: 1em;
+    font-size: 18px;
+}
+
+#mensagem{
+    height: 10em;
+    padding: 0.8em 1.2em 0.8em 1.2em;
+    resize: none;
+    font-family: inherit;
+}
+.enviar-btn{
+    background-color: rgb(113,163,151);
+    /* background-color: rgb(155,155,155); */
+    padding: 0.7em;
+    color: #FFF;
+    border: none;
+    width: 100%;
+    border-radius: 8px;
+    font-weight: bold;
+    border-bottom: 0.4em solid rgb(76,137,121);
+    /* border-bottom: 0.4em solid rgb(155,155,155); */
+    font-size: 22px;
+    text-decoration: none;
+    display: block;
+}
+
+.enviar-btn:hover{
+    background: rgb(128, 172, 162);
+    border-bottom: 0.4em solid rgb(88, 165, 143);
+}
+
+.input-error-msg{
+    display: inline-block;
+    position: absolute;
+    background-color: rgb(216, 90, 75);
+    font-weight: 400;
+    font-size: 16px;
+    color: #FFF;
+    padding: 0em 1.5em;
+    border-radius: 6px;
+    visibility: hidden;
+    /* width: 250px; */
+}
+.input-error-msg p {
+    text-align: left;
+}
