@@ -22,26 +22,27 @@
                 <p class=p-header>Vem tomar um café com a gente</p>
                 <p class="success-message" id="success-message">Sua mensagem foi enviada com sucesso.</p>
 
-                <form onsubmit="return errorMessages()">
+                <!--  method="POST" -->
+                <form action="#" id="contact-form">
                         <div class="input-error-msg" id="nome-error-alert">
                             <p>Insira seu nome completo.</p>
                         </div>
                         <i class="fa fa-times-circle fa-2x" aria-hidden="true" id="nome-error-icon"></i>
-                        <input type="text" placeholder="Nome" name="nome" id="nome" onclick="errorMessages()">
+                        <input type="text" placeholder="Nome" name="nome" id="nome" oninput="errorName()">
                        
                         <div class="input-error-msg" id="email-error-alert">
                             <p>Insira um email válido.</p>
                         </div>
                         <i class="fa fa-times-circle fa-2x" aria-hidden="true" id="email-error-icon"></i>
-                        <input type="email" placeholder="Email" name="email" id="email" onclick="errorMessages()"><br>
+                        <input type="email" placeholder="Email" name="email" id="email" oninput="errorEmail()"><br>
 
                         <div class="input-error-msg" id="mensagem-error-alert">
                             <p>A mensagem deve conter pelo <br> menos 4 palavras e 20 caracteres.</p>
                         </div>
                         <i class="fa fa-times-circle fa-2x" aria-hidden="true" id="mensagem-error-icon"></i>
-                        <textarea name="mensagem" id="mensagem" cols="30" rows="10" placeholder="Mensagem" onclick="errorMessages()"></textarea><br>
+                        <textarea name="mensagem" id="mensagem" cols="30" rows="10" placeholder="Mensagem" oninput="errorMessage()"></textarea><br>
 
-                        <button type="submit" class="enviar-btn" id="enviar-btn">ENVIAR</button>
+                        <button type="submit" class="enviar-btn enviar-btn-disabled" id="enviar-btn" disabled>ENVIAR</button>
                 </form>
             </div>
         </section>

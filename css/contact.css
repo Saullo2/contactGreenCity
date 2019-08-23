@@ -96,9 +96,14 @@ header{
     cursor: pointer;
 }
 
-.enviar-btn:hover{
+/* .enviar-btn:hover{
     background: rgb(128, 172, 162);
     border-bottom: 0.4em solid rgb(88, 165, 143);
+} */
+
+.enviar-btn-disabled{
+    background: rgb(157,164,158);
+    border-bottom: 0.4em solid rgb(157,164,158);
 }
 
 .input-error-msg{
