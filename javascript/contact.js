@@ -1,73 +1,111 @@
+window.addEventListener('resize', errorMessages);
+
 function errorMessages(){
 
-    if (inputNameValidation){
+    var permission = false;
 
-        inputNameField = document.getElementById("nome");
-        iconNameError = document.getElementById("nome-error-icon");
-        errorMessageContent = document.getElementById("nome-error-alert");
+    permission = inputNameValidation();
 
-        pushingAsideDiv(inputNameField, errorMessageContent);
-        pushingAsideIcon(inputNameField, iconNameError);
-    }
-   
-    if (inputEmailValidation){
+    permission = inputEmailValidation();
 
-        inputEmailField = document.getElementById("email");
-        iconEmailError = document.getElementById("email-error-icon");
-        errorMessageContent = document.getElementById("email-error-alert");
-
-        pushingAsideDiv(inputEmailField, errorMessageContent);
-        pushingAsideIcon(inputEmailField, iconEmailError);
-    }
-    
-    if (textAreaValidation){
-
-        textAreaField = document.getElementById("mensagem");
-        iconMessageError = document.getElementById("mensagem-error-icon");
-        errorMessageContent = document.getElementById("mensagem-error-alert");
-
-        pushingAsideDiv(textAreaField, errorMessageContent);
-        pushingAsideIcon(textAreaField, iconMessageError);
-    }
-
-    // if(inputNameValidation && inputEmailValidation %% textAreaValidation){
+    permission = textAreaValidation(); 
+      
+    // if (permission) {
+    //     // all fields valid at this point
     //     successMessage = document.getElementById("success-message");
-    //     successMessage.style.visibility = visible;
+    //     successMessage.style.visibility = "visible";
     // }
+
+    return permission;
 }
 
-function pushingAsideDiv(field, errorContent){
+// Pushing aside and Hiding error messages
+
+function pushingAsideError(field, errorContent, icon){
 
     fieldWidth = field.offsetWidth;
-    console.log("fieldWidth: " + fieldWidth);
+    marginLeftContent =  fieldWidth + 36;
+    marginLeftIcon = fieldWidth - 36;
 
-    marginLeft =  fieldWidth + 36;
-
-    errorContent.style.marginLeft = marginLeft + "px";
+    errorContent.style.marginLeft = marginLeftContent + "px";
     errorContent.style.visibility = "visible";
-}
 
-function pushingAsideIcon(field, icon){
-    fieldWidth = field.offsetWidth;
-    console.log("fieldWidth: " + fieldWidth);
-
-    marginLeft =  fieldWidth - 36;
-
-    icon.style.marginLeft = marginLeft + "px";
+    icon.style.marginLeft = marginLeftIcon + "px";
     icon.style.visibility = "visible";
 }
 
+function hidingErrorMessage(errorContent, icon){
+
+    errorContent.style.visibility = "hidden";
+    icon.style.visibility = "hidden";
+}
+
+// Validating fields
+
 function inputNameValidation(){
 
-    return true;
+    var valid = false;
+
+    var regularExp = /^([a-z]+\s)+[a-z]+$/i;
+
+    inputNameField = document.getElementById("nome");
+    iconNameError = document.getElementById("nome-error-icon");
+    errorMessageContent = document.getElementById("nome-error-alert");
+
+    if (regularExp.test(inputNameField.value) && (inputNameField.value.length >= 7)){
+
+        valid = true;
+
+        hidingErrorMessage(errorMessageContent, iconNameError);
+
+        return valid;
+    }
+
+    pushingAsideError(inputNameField, errorMessageContent, iconNameError);
+
+    return valid;
 }
 
 function inputEmailValidation(){
+    var valid = false;
 
-    return true;
+    var regularExp = /^[a-z0-9]+@[a-z]+\.[a-z]+(\.[a-z]+)?$/i;
+
+    inputEmailField = document.getElementById("email");
+    iconEmailError = document.getElementById("email-error-icon");
+    errorMessageContent = document.getElementById("email-error-alert");
+
+    if (regularExp.test(inputEmailField.value)){
+
+        valid = true;
+
+        hidingErrorMessage(errorMessageContent, iconEmailError);
+        return valid;
+    }
+
+    pushingAsideError(inputEmailField, errorMessageContent, iconEmailError);
+
+    return valid;
 }
 
 function textAreaValidation(){
+    var valid = false;
 
-    return true;
+    var regularExp = /^([a-z0-9]+\s){3,}[a-z]+$/i;
+
+    textAreaField = document.getElementById("mensagem");
+    iconMessageError = document.getElementById("mensagem-error-icon");
+    errorMessageContent = document.getElementById("mensagem-error-alert");
+
+    if(regularExp.test(textAreaField.value) && (textAreaField.value.length >= 20)){
+
+        valid = true;
+
+        hidingErrorMessage(errorMessageContent, iconMessageError);
+        return valid;
+    }
+    
+    pushingAsideError(textAreaField, errorMessageContent, iconMessageError);
+
+    return valid;
 }

@@ -22,7 +22,7 @@
                 <p class=p-header>Vem tomar um café com a gente</p>
                 <p class="success-message" id="success-message">Sua mensagem foi enviada com sucesso.</p>
 
-                <form action="." method="POST">
+                <form onsubmit="return errorMessages()">
                         <div class="input-error-msg" id="nome-error-alert">
                             <p>Insira seu nome completo.</p>
                         </div>
@@ -41,7 +41,7 @@
                         <i class="fa fa-times-circle fa-2x" aria-hidden="true" id="mensagem-error-icon"></i>
                         <textarea name="mensagem" id="mensagem" cols="30" rows="10" placeholder="Mensagem" onclick="errorMessages()"></textarea><br>
 
-                        <button type="submit" class="enviar-btn" id="enviar-btn" disabled>ENVIAR</button>
+                        <button type="submit" class="enviar-btn" id="enviar-btn">ENVIAR</button>
                 </form>
             </div>
         </section>

@@ -69,6 +69,7 @@ header{
     font-weight: 300; /* Light */
     margin-bottom: 1em;
     font-size: 18px;
+    border: none;
 }
 
 #mensagem{
